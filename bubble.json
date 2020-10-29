@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": "Energy Consumption vs GDP per Capita",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/bubble.csv"
+  },
+  "transform": [{"filter": "year(datum.Year) == 2014"}],
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "GDP", "type": "quantitative", "title": "GDP per Capita"},
+    "y": {
+      "field": "Energy Consumed",
+      "type": "quantitative",
+      "title": "Energy Consumed (TWh)"
+    },
+    "color": {"field": "Entity", "type": "nominal", "title": "Country"},
+    "size": {
+      "field": "Population",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    }
+  },
+  "config": {}
+}
