@@ -3,8 +3,8 @@
   "data": {
     "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/primary_energy_source.csv"
   },
-  "width": 600,
-  "height": 500,
+  "width": 500,
+  "height": 400,
   "encoding": {"x": {"field": "Row", "type": "temporal", "title": "Year"}},
   "title": "Primary direct energy consumption by source, World",
   "layer": [
