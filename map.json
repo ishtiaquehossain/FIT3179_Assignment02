@@ -11,10 +11,10 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/per-capita-energy-use.csv"
+          "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/choropleth_per_capita_enegy.csv"
         },
-        "key": "Entity",
-        "fields": ["EnergyConsumptionPerCapitaIn(kWh)"]
+        "key": "Country",
+        "fields": ["Energy Consumption KWh"]
       }
     }
   ],
@@ -22,14 +22,22 @@
   "mark": {"type": "geoshape", "stroke": "whitesmoke"},
   "encoding": {
     "color": {
-      "field": "EnergyConsumptionPerCapitaIn(kWh)",
+      "field": "Energy Consumption KWh",
       "type": "quantitative",
-      "scale": {"type": "log"}
+      "scale": {
+        "type": "threshold",
+        "domain": [20000,40000,60000,80000,100000],
+        "range":["#ff8080","#ff4d4d","#e3120b","#800000","#4d0000","#1a0000"]
+        },
+      "title": "Energy in KWh"
     },
     "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "Entity"},
-      {"field": "EnergyConsumptionPerCapitaIn(kWh)", "type": "quantitative"}
+      {"field": "properties.NAME", "type": "nominal", "title": "Country  Name"},
+      {"field": "Energy Consumption KWh", "type": "quantitative","title": "Energy in KWh"}
     ]
   },
-  "config": {}
+  "config": {
+    "background":"",
+    "view": {"stroke":"transparent"}
+  }
 }
