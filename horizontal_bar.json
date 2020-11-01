@@ -1,21 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "A bar chart with negative values. We can hide the axis domain line, and instead use a conditional grid color to draw a zero baseline.",
-  "width": 500,
-  "height": 300,
+  "width": 700,
+  "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/horizontal_bar.csv"
   },
   "params": [
     {
       "name": "Year_Above",
-      "value": 1970,
+      "value": 1990,
       "bind": {
         "input": "range",
-        "min": 1970,
+        "min": 1990,
         "max": 2014,
         "step": 1,
-        "name": "Minimum year"
+        "name": "Select Year"
       }
     }
   ],
@@ -29,21 +29,32 @@
         "domain": false,
         "ticks": false,
         "labelAngle": 0,
-        "labelPadding": 4
+        "labelPadding": 4,
+        "title":null,
+        "grid": false,
+        "domainColor":"whitesmoke"
       }
     },
     "x": {
       "field": "Energy imports",
       "type": "quantitative",
       "axis": {
-        "gridColor": {
-          "condition": {"test": "datum.value === 0", "value": "black"},
-          "value": "#ddd"
-        },
-        "title": "Enery Imports/Exports (%)"
-      }
+        "grid": false,
+        "title":"Trade",
+        "domainColor":"whitesmoke"
+      },"scale":{"domain":[-40,40]}
     },
-    "color": {"field": "Entity", "type": "nominal"}
+    "color": {"field": "Entity", "scale":{"range":["#8abbd0","#d4dddd","#d4dddd","#d4dddd","#800000"]},"legend":null},
+
+     "tooltip": [ 
+       {"field": "Energy imports", "format": ".2f", "type": "quantitative", "title": "Trade Percentage"},
+      {"field": "Year", "type": "temporal", "title": "Year", "timeUnit":"year"}
+    ]
   },
-  "config": {}
+  "config": {
+      "background":"",
+  "view": {
+     "stroke": "transparent"
+  }
+}
 }
