@@ -1,29 +1,28 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 500,
-  "height": 400,
-  "title": "Co2 Emmissions Around The Globe",
+  "width": 650,
+  "height": 350,
   "data": {
-    "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_homework09/main/co2_2.csv"
-  },
+    "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_homework09/main/annual_CO2_emissions.csv"},
   "params": [
     {
       "name": "Year_Above",
-      "value": 1970,
+      "value": 1990,
       "bind": {
         "input": "range",
-        "min": 1970,
-        "max": 2018,
-        "step": 5,
+        "min": 1990,
+        "max": 2020,
+        "step": 1,
         "name": "Minimum year"
       }
     },
     {
       "name": "Continent_selection",
+      "value":"World",
       "bind": {
         "input": "select",
         "options": [
-          null,
+          "World",
           "North America",
           "South America",
           "Europe",
@@ -40,25 +39,43 @@
           "Asia",
           "Oceania"
         ],
-        "name": "Continent: "
+        "name": "Continent "
       }
     }
   ],
   "transform": [
     {
-      "filter": "Continent_selection == null || datum.Country == Continent_selection"
+      "filter": "datum.Entity == Continent_selection"
     },
     {"filter": "year(datum.Year) > Year_Above"}
   ],
-  "mark": {"type": "line"},
+  "mark": {"type": "line",  "point": true},
+  
   "encoding": {
     "y": {
       "field": "AnnualCO2Emissions",
       "type": "quantitative",
-      "title": "Confirmed Cases",
-      "aggregate": "sum"
+      "title": "Annual Co2 emissions (Million)",
+      "aggregate": "sum",
+      "axis": {"tickCount": 8}
     },
-    "x": {"field": "Year", "type": "temporal"}
+    "x": {
+      "field": "Year", 
+      "type": "temporal"
+      },
+
+    "color": "maroon",
+      
+      "tooltip": [
+      {"field": "AnnualCO2Emissions", "aggregate": "sum", "format": ".2f", "type": "quantitative", "title": "CO2 Emission"}, 
+      {"field": "Year", "type": "temporal", "title": "Year", "timeUnit":"year"}
+    ]
   },
-  "config": {}
+   "config": {
+      "background":"",
+  "view": {
+     "stroke": "transparent",
+     "opacity": 0.5
+  }
+}
 }
