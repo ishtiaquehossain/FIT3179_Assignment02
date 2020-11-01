@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 650,
+  "width": 600,
   "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_homework09/main/annual_CO2_emissions.csv"},
@@ -55,13 +55,15 @@
     "y": {
       "field": "AnnualCO2Emissions",
       "type": "quantitative",
-      "title": "Annual Co2 emissions (Million)",
+      "title": " CO2 Emission (Million Tonnes)",
       "aggregate": "sum",
-      "axis": {"tickCount": 8}
+      "axis": {"tickCount": 8,"domainColor":"white"}
     },
     "x": {
       "field": "Year", 
-      "type": "temporal"
+      "type": "temporal",
+      "axis": {"grid":false, "domainColor":"white", "gridOpacity":0.01}
+
       },
 
     "color": "maroon",
