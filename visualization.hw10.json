@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 600,
+  "width": 700,
   "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_homework09/main/annual_CO2_emissions.csv"},
@@ -31,7 +31,7 @@
           "Oceania"
         ],
         "labels": [
-          "Show All",
+          "All Continent",
           "North America",
           "South America",
           "Europe",
@@ -49,30 +49,49 @@
     },
     {"filter": "year(datum.Year) > Year_Above"}
   ],
-  "mark": {"type": "line",  "point": true},
+
   
-  "encoding": {
+  
+  
+  "layer": [{
+    "mark": {"type": "line",  "point": true},
+    "encoding": {
     "y": {
       "field": "AnnualCO2Emissions",
       "type": "quantitative",
       "title": " CO2 Emission (Million Tonnes)",
       "aggregate": "sum",
-      "axis": {"tickCount": 8,"domainColor":"white"}
+      "axis": {"tickCount": 4,"domainColor":"ghostwhite"}
     },
     "x": {
       "field": "Year", 
       "type": "temporal",
-      "axis": {"grid":false, "domainColor":"white", "gridOpacity":0.01}
+      "axis": {"grid":false, "domainColor":"ghostwhite", "gridOpacity":0.01}
 
       },
 
-    "color": "maroon",
+      "color":"maroon",
       
       "tooltip": [
       {"field": "AnnualCO2Emissions", "aggregate": "sum", "format": ".2f", "type": "quantitative", "title": "CO2 Emission"}, 
       {"field": "Year", "type": "temporal", "title": "Year", "timeUnit":"year"}
     ]
-  },
+  }
+  }, {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":300,
+          "dy": -25,
+          "text": "Global CO2 emission has always been on a rise excluding year 2009",
+          "fontWeight":"lighter",
+          "fontSize": 12
+        }
+  }],
+
+
+
+
    "config": {
       "background":"",
   "view": {
