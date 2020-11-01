@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 700,
-  "height": 550,
+  "width": 650,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_homework09/main/ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -19,7 +19,7 @@
     }
   ],
   "projection": {"type": "equirectangular"},
-  "mark": {"type": "geoshape", "stroke": "whitesmoke"},
+  "mark": {"type": "geoshape", "stroke": "ghostwhite"},
   "encoding": {
     "color": {
       "field": "Energy Consumption KWh",
@@ -29,11 +29,11 @@
         "domain": [20000,40000,60000,80000,100000],
         "range":["#ff8080","#ff4d4d","#e3120b","#800000","#4d0000","#1a0000"]
         },
-      "title": "Energy in KWh"
+      "title": "Energy Consumed (KWh)"
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country  Name"},
-      {"field": "Energy Consumption KWh", "type": "quantitative","title": "Energy in KWh"}
+      {"field": "Energy Consumption KWh", "type": "quantitative","title": "Energy in KWh", "format":".0f"}
     ]
   },
   "config": {
