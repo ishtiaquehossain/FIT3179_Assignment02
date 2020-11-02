@@ -4,7 +4,7 @@
     "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/primary_energy_source.csv"
   },
   "width": 650,
-  "height": 400,
+  "height": 350,
   "encoding": {"x": {"field": "Row", "type": "temporal", "title": "Year",
   "axis":{"grid": false, "domainColor":"whitesmoke"}}},
   "layer": [
