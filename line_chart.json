@@ -3,19 +3,42 @@
   "data": {
     "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/primary_energy_source.csv"
   },
-  "width": 500,
+  "width": 650,
   "height": 400,
-  "encoding": {"x": {"field": "Row", "type": "temporal", "title": "Year"}},
-  "title": "Primary direct energy consumption by source, World",
+  "encoding": {"x": {"field": "Row", "type": "temporal", "title": "Year",
+  "axis":{"grid": false, "domainColor":"whitesmoke"}}},
   "layer": [
     {
       "encoding": {
-        "color": {"field": "Column", "type": "nominal", "title": "Energy Type"},
-        "y": {"field": "Value", "type": "quantitative"}
+        "color": {"field": "Column", "type": "nominal", "title": "Energy Type","legend":null,"scale":{"range":["#800000", "#800000", "#d4dddd", "#d4dddd", "#d4dddd", "#800000","#d4dddd", "#d4dddd" ]}},
+        "y": {"field": "Value", "type": "quantitative","axis":{"tickCount":8},"title":"Energy Consumption in TWh"}
       },
       "layer": [
         {"mark": "line"},
         {"transform": [{"filter": {"selection": "hover"}}], "mark": "point"}
+        ,
+     {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -20,
+        "dy":22,
+        "fontWeight":"normal"
+        
+      },
+      "encoding": {
+        "text": {"field": "Column", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity":{
+          "condition":
+          {"test": " year(datum.Row)== 2017 && (datum['Column'] ==['Oil Consumption - TWh'] || datum['Column'] ==['Gas Consumption - TWh'] || datum['Column'] ==['Coal Consumption - TWh'])", "value": 1},
+          "value": 0
+
+        }
+      }
+
+    }
+    
       ]
     },
     {
@@ -85,7 +108,40 @@
           "clear": "mouseout"
         }
       }
-    }
+    },
+
+    {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":100,
+          "dy": 150,
+          "text": "Others Below 5k TWh",
+          "fontWeight":"normal",
+          "fontSize": 12
+        },
+        "encoding": {
+
+          "opacity":{
+          "condition":
+          {"test": " year(datum.Row)== 2017 && datum['Column'] ==['Oil Consumption - TWh']", "value": 1},
+          "value": 0
+
+        }
+
+
+
+
+        }
+  }
+
+
+
   ],
-  "config": {}
+  "config": {
+    "background":"",
+    "view": {"stroke":"transparent"
+      
+    }
+  }
 }
