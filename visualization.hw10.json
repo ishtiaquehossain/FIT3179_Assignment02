@@ -70,7 +70,7 @@
 
       },
 
-      "color":"maroon",
+      "color":"navy",
       
       "tooltip": [
       {"field": "AnnualCO2Emissions", "aggregate": "sum", "format": ".2f", "type": "quantitative", "title": "CO2 Emission"}, 
