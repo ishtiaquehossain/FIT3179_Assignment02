@@ -44,7 +44,7 @@
         "domainColor":"whitesmoke"
       },"scale":{"domain":[-40,40]}
     },
-    "color": {"field": "Entity", "scale":{"range":["#8abbd0","#d4dddd","#d4dddd","#d4dddd","#800000"]},"legend":null},
+    "color": {"field": "Entity", "scale":{"range":["#8abbd0","#d4dddd","#d4dddd","#d4dddd","#000080"]},"legend":null},
 
      "tooltip": [ 
        {"field": "Energy imports", "format": ".2f", "type": "quantitative", "title": "Trade Percentage"},
