@@ -1,0 +1,13 @@
+﻿continent,status,number,stk1,stk2,size
+Asia,C02,19,Asia,C02,19
+Asia,Global,53,Asia,Global,53
+North America,C02,6.5,North America,C02,6.5
+North America,Global,18,North America,Global,18
+Europe,C02,6.1,Europe,C02,6.1
+Europe,Global,17,Europe,Global,17
+Africa,C02,1.3,Africa,C02,1.3
+Africa,Global,3.7,Africa,Global,3.7
+South America,C02,1.1,South America,C02,1.1
+South America,Global,3.2,South America,Global,3.2
+Oceania,C02,0.5,Oceania,C02,0.5
+Oceania,Global,1.3,Oceania,Global,1.3
