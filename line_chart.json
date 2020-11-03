@@ -10,7 +10,7 @@
   "layer": [
     {
       "encoding": {
-        "color": {"field": "Column", "type": "nominal", "title": "Energy Type","legend":null,"scale":{"range":["#800000", "#800000", "#d4dddd", "#d4dddd", "#d4dddd", "#800000","#d4dddd", "#d4dddd" ]}},
+        "color": {"field": "Column", "type": "nominal", "title": "Energy Type","legend":null,"scale":{"range":["#000080", "#000080", "#d4dddd", "#d4dddd", "#d4dddd", "#000080","#d4dddd", "#d4dddd" ]}},
         "y": {"field": "Value", "type": "quantitative","axis":{"tickCount":8},"title":"Energy Consumption in TWh"}
       },
       "layer": [
