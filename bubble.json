@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 600,
+  "width": 700,
   "height": 350,
   "title": "Energy Consumption vs GDP per Capita",
   "data": {
@@ -40,7 +40,7 @@
       "scale":{"domain":[0,9000]},
       "axis":{"grid": false,"gridColor":null}
     },
-    "color": {"field": "Entity", "type": "nominal", "scale":{"domain":["Australia","United States","Saudi Arabia","South Korea","China","France"],"range":["#800000","#800000","#800000","#800000","#800000","#800000"]}
+    "color": {"field": "Entity", "type": "nominal", "scale":{"domain":["Australia","United States","Saudi Arabia","South Korea","China","France"],"range":["#336666", "#9ae5de", "#91b8bd", "#000080", "#8abbd0", "#efe8d1"]}
   },
     "opacity": {
  "condition": {"selection": "continent_highlight", "value": 0.6},
@@ -62,5 +62,10 @@
       {"field": "Energy Consumed","format": ".2f", "type": "quantitative", "title": "Energy Consumed"}
     ]
   },
-  "config": {}
+  "config": {
+      "background":"",
+  "view": {
+     "stroke": "transparent"
+  }
+}
 }
