@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 300,
-  "height": 200,
+  "width": 650,
+  "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/annual-co-emissions-by-region.csv"
   },
