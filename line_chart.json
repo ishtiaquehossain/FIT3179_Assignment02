@@ -1,3 +1,4 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {
@@ -6,12 +7,12 @@
   "width": 700,
   "height": 350,
   "encoding": {"x": {"field": "Row", "type": "temporal", "title": "Year",
-  "axis":{"grid": false, "domainColor":"whitesmoke","tickCount":10}}},
+  "axis":{"grid": false, "domainColor":"ghostwhite","tickCount":10}}},
   "layer": [
     {
       "encoding": {
         "color": {"field": "Column", "type": "nominal", "title": "Energy Type","legend":null,"scale":{"range":["#000080", "#000080", "#d4dddd", "#d4dddd", "#d4dddd", "#000080","#d4dddd", "#d4dddd" ]}},
-        "y": {"field": "Value", "type": "quantitative","axis":{"tickCount":8},"title":"Energy Consumption in TWh"}
+        "y": {"field": "Value", "type": "quantitative","axis":{"tickCount":8,"domainColor":"ghostwhite","gridDashOffset":0.01},"title":"Energy Consumption in TWh"}
       },
       "layer": [
         {"mark": "line"},
