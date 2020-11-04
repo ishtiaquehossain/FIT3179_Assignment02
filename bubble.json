@@ -31,14 +31,14 @@
   "transform": [{"filter": "year(datum.Year) == Year_Above && (datum.Entity=='Australia' || datum.Entity=='United States' || datum.Entity=='Saudi Arabia' || datum.Entity=='France' || datum.Entity == 'China' || datum.Entity == 'South Korea')"}],
   "mark": "circle",
   "encoding": {
-    "x": {"field": "GDP", "type": "quantitative", "title": "GDP per Capita","scale":{"domain":[0,60000]},"axis":{"tickCount":4,"gridColor":null}
+    "x": {"field": "GDP", "type": "quantitative", "title": "GDP per Capita","scale":{"domain":[0,60000]},"axis":{"tickCount":4,"domainColor":"ghostwhite","gridDashOffset":0.01}
     },
     "y": {
       "field": "Energy Consumed",
       "type": "quantitative",
       "title": "Energy Consumed (TWh)",
       "scale":{"domain":[0,9000]},
-      "axis":{"grid": false,"gridColor":null}
+      "axis":{"grid": false,"domainColor":"ghostwhite","gridDashOffset":0.01}
     },
     "color": {"field": "Entity", "type": "nominal", "scale":{"domain":["Australia","United States","Saudi Arabia","South Korea","China","France"],"range":["#336666", "#9ae5de", "#91b8bd", "#000080", "#8abbd0", "#efe8d1"]}
   },
