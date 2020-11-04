@@ -6,7 +6,7 @@
   "width": 700,
   "height": 350,
   "encoding": {"x": {"field": "Row", "type": "temporal", "title": "Year",
-  "axis":{"grid": false, "domainColor":"whitesmoke"}}},
+  "axis":{"grid": false, "domainColor":"whitesmoke","tickCount":10}}},
   "layer": [
     {
       "encoding": {
