@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/temperature_anomaly.csv"
+  },
+  "width": 650,
+  "height": 350,
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "axis": {"domainColor": null, "grid": false, "tickCount": 10}
+    }
+  },
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Symbol",
+          "type": "nominal",
+          "scale": {"range": ["silver", "#000088", "silver"]},
+          "title": "Bound Type"
+        },
+        "y": {
+          "field": "Price",
+          "type": "quantitative",
+          "axis": {"domainColor": null, "tickCount": 10},
+          "title": "Temperature Change"
+        }
+      },
+      "layer": [
+        {"mark": "line"},
+        {"transform": [{"filter": {"selection": "hover"}}], "mark": "point"}
+      ]
+    },
+    {
+      "transform": [{"pivot": "Symbol", "value": "Price", "groupby": ["Year"]}],
+      "mark": "rule",
+      "encoding": {
+        "opacity": {
+          "condition": {"value": 0.3, "selection": "hover"},
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Median", "type": "quantitative"},
+          {"field": "Upper", "type": "quantitative"},
+          {"field": "Lower", "type": "quantitative"}
+        ]
+      },
+      "selection": {
+        "hover": {
+          "type": "single",
+          "fields": ["Year"],
+          "nearest": true,
+          "on": "mouseover",
+          "empty": "none",
+          "clear": "mouseout"
+        }
+      }
+    }
+  ],
+  "config": {"background": "", "view": {"stroke": "transparent"}}
+}
