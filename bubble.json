@@ -100,7 +100,8 @@
           "align": "right",
           "fontSize": 12,
           "text": "Although increasing in GDP, France",
-          "dx":75
+          "dx":75,
+          "dy":75
            }
   },
     {
@@ -109,7 +110,8 @@
           "align": "right",
           "fontSize": 12,
           "text": "maintaining a constant energy demand",
-          "dx":275
+          "dx":285,
+          "dy":75
            }
   }
   
