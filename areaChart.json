@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 300,
+  "height": 200,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ishtiaquehossain/FIT3179_Assignment02/main/annual-co-emissions-by-region.csv"
+  },
+  "mark": "area",
+  "transform": [
+    {
+      "filter": "year(datum.Year)>1890 && (datum.Entity == 'Asia (excl. China & India)' || datum.Entity== 'China' || datum.Entity== 'United States' ||datum.Entity== 'Africa' ||datum.Entity== 'Europe')"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "field": "Year",
+      "axis": {"grid": false, "domain": false, "domainColor": null},
+      "title": "Year"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "Annual CO2 emissions",
+      "axis": {"domainColor": null, "ticks": false},
+      "title": "Co2 emission in Million Tonnes"
+    },
+    "color": {"field": "Entity", "scale": {"scheme": "tealblues"}},
+    "tooltip": [
+      {"field": "Entity", "type": "nominal"},
+      {
+        "field": "Annual CO2 emissions",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Co2 emission in Million Tonnes"
+      },
+      {"field": "Year", "type": "temporal", "timeUnit": "year", "title": "Year"}
+    ]
+  },
+  "config": {"background": "", "view": {"stroke": "transparent"}}
+}
