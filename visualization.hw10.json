@@ -78,9 +78,25 @@
     "mark": {
           "type": "text",
           "align": "right",
-            "fontSize": 12
+          "fontSize": 12,
+          "text": "In 2019, about 43.1 billion tons of CO2 from human activities"
            }
-  }],
+  },
+  
+  {
+    "mark": {
+          "type": "text",
+          "align": "right",
+          "fontSize": 12,
+          "text": "were emitted into the atmosphere, which is the highest till date",
+          "dy":25,
+          "dx":10
+           }
+  }
+  
+  
+  
+  ],
   "config": {
       "background":"",
   "view": {
