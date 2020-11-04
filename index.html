@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Viz-29585775</title>
+    
+  <!-- Import Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <!-- Google font -->
+    
+    
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- custom CSS -->
+  <style>
+    *{
+      font-family: 'Roboto', sans-serif;
+    }
+    h1{
+      font-weight: 800;
+        font-size: 200;
+    }
+     body{
+       background-color: silver;
+     }
+     .page{
+       width: 1150px;    
+       background-color: #fafafa;   
+       margin: auto;
+       padding: 50px;
+       padding-top: 35px;
+    }
+    .vis-container{
+      width: 100%;
+    }
+    .description h2, h1, h4{
+      margin-top:0px;
+      color: navy
+    }
+    .description-left{
+      padding-right: 20px;
+    }
+    .pure-g{
+      margin-bottom: 25px;
+    }
+    p{
+     font-size: 18px;
+     font-weight: 300;
+    }
+    .small-font{
+      font-size: 15.5px;
+      font-weight: 350;
+    }
+      
+    h1.a{
+          font-size: 55px;
+      }
+    .a{
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .k{
+          color: navy;
+        font-size: 20px;
+          
+    }
+      
+    
+    
+    
+  </style>
+</head>
+<body>
+
+ <div class="page">
+     
+     
+     
+   <!-- this is my heading block . I also have an intro here--> 
+
+     
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1 class="a" style="text-align: center">Engergy Consumption and the Climate</h1>
+        <p class="a" style="text-align: justify">Access to energy is the central component to human well-being, sustainable growth and the poverty alleviation. However, our energy consumptions have adverse environmental impacts.  In this  visualisation, I have attempted covering the fundamentals of global energy consumption and its impact to climate change.</p>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    
+     
+    
+    <!-- this is my choropleth map for per capita energy consumption -->  
+     
+     
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-4">
+           <div class="description description-left">
+             <h2 style="text-align: justify">Energy Consumption Per Capita in ( KWh )</h2>
+           </div>
+            
+          <div>
+              <p class="small-font" style="text-align: justify"> Here, we see per capita energy use for 2019 (inclusive of all dimensions of enrgy). There are several important points to be noted. Firstly, there has been a constant rise in energy consumption. Over the last four decades, energy consumption has increased 45%. Moreover we can see large global inequalities. Per say, average US citizen consumption is ten times that of India </p>
+          </div>    
+            
+          <div>
+            <b style="font-size: 15.5px"> What is the per capita energy consumption of your country ? </b>
+          </div>
+        </div>
+        
+        
+        <div class="pure-u-3-4">
+          <div id="vis1" class="vis-container"></div>
+            <br>
+            <br>
+            <br>
+        </div>
+        
+  
+   
+     </div>
+    <!-- end pure grid group -->
+
+     
+     
+    <!-- this is my line chart showing all the primary sources of energy consumption -->   
+     
+     
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-4">
+          <div class="description description-left">
+            <h2 style="text-align: justify">Primary Sources of Energy Production</h2>
+              
+            <p class="small-font" style="text-align: justify"> In this visualisation, we can compare the primary sources of energy for the last 5 decades. However, this approach does not account for the fossil fuels that is lost in the conversion. if we cannot find an alternative soon, we will run </p>
+             <p class="small-font" style="text-align: justify"> Oil, Coal and Gas have been the three most consumed natural resources. If we keep on consuming at this rate, we will run out of them within next century </p>    
+              <br>
+          </div>
+          <div>
+            <b style="text-align: justify">What will be the primary source of Energy in the next century? </b>
+          </div>
+        </div>
+        <div class="pure-u-3-4">
+          <div id="vis4" class="vis-container"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+     
+     
+     
+     
+     
+     <!-- this is my horizontal bar chart showing energy trade --> 
+     
+     
+
+     <!-- pure grid group -->
+     <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="description description-left">
+          <h2 style="text-align: justify">Exports and Imports of Energy</h2>
+          <p class="small-font" style="text-align: justify"> Distribution of Energy has an obvious impact on energy trade. If a country is rich in energy and at the same time, consumes a lot. Then the country has very less energy to trade. Again, a country consuming less energy, can be a net exporter even though they profuce less energy.</p>
+            <p class="small-font" style="text-align: justify"> Now, in terms of income level, there is a clear difference between different income level countries. High income countries always make a balnce between the energy consumption and production, so they are mostly net exporters. On the other hand most countries,still lack in producing enough energy for themselves.</p>
+        </div>
+        <div>
+          <b>Is your country maintaining a positive energy balance?</b>
+        </div>
+      </div>
+      <div class="pure-u-3-4">
+        <div id="vis3" class="vis-container"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+      </div>
+    </div>
+     
+
+     
+     
+    <!-- this is my line chart showing energy vs GDP --> 
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="description description-left">
+          <h2 style="text-align: justify">Energy Consumption vs GDP</h2>
+          <p class="small-font" style="text-align: justify"> The linkage between energy and economic growth is a widely discussed topic. A country with higher GDP has better access to everything resulting in more consumption of energy.</p>
+            
+            <p class="small-font" style="text-align: justify"> Here, in the bubble plot showing data from 1990-2010, we can see all the countries have increased their GDP. Similarly, the energy consumption for those countries have also increased linearly. So we can clearly state that there is a clear linkage between economic prosperity and higher energy consumption.</p>
+            <br>
+        </div>
+        <div>
+          <b>What drives energy consumption?</b>
+        </div>
+      </div>
+      <div class="pure-u-3-4">
+        <div id="vis5" class="vis-container"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+      </div>
+    </div>
+     
+     
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p class="a" style="text-align: justify"> <b class="k">Increased</b> number of energy consumption has a direct impact on global climate change. Energy produced through burning of fossil fuel gives rise to atmospheric carbon di oxide. These increasing number of CO2 works as the key to climate change. In this later part of the dashboard, we will visualise more about CO2 and its impact on the Climate change.</p>
+          <br>
+          <br>
+      </div>
+    </div>
+
+     
+     
+      <!-- this is my line chart for  showing energy trade --> 
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="description description-left">
+          <h2 style="text-align: justify">Co2 Emissions Around The Globe from 1990 to 2018</h2>
+          <p class="small-font" style="text-align: justify"> Due to massive industrialization, the amount of energy consumption has been on a rise. At the same time there is a increase in the concentration of global CO2. This visualisation clearly shows the upward trend of the annual CO2 emission. In the last three decades, there has been nearly 40% rise CO2 in the atmosphere. If the trend continues to go on, there will be a massive change in the climate by year 2050.</p>
+        </div>
+        <div>
+          <b style="font-size: 15.5px">Do you have any ideas on how to reduce Co2 emmissions globally for a better future ?</b>
+        </div>
+      </div>
+      <div class="pure-u-3-4">
+        <div id="vis2" class="vis-container"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+      </div>
+    </div>
+     
+     
+     
+     
+     
+     
+     <!-- pure sankeyy group -->
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="description description-left">
+          <h2 style="text-align: justify">Share of Global Emission by Continents</h2>
+          <p class="small-font" style="text-align: justify"> This visualisation clearly shows the upward trend of the annual CO2 emission. In the last three decades, there has been nearly 40% rise CO2 in the atmosphere. If the rise</p>
+        </div>
+        <div>
+          <b style="font-size: 15.5px">Do you have any ideas on how to reduce Co2 emmissions globally for a better future ?</b>
+        </div>
+      </div>
+      <div class="pure-u-3-4">
+        <div id="vis6" class="vis-container"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+      </div>
+    </div>
+     
+     
+           <!-- pure area group -->
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="description description-left">
+          <h2 style="text-align: justify">Leading Carbon dioxide Emitters Around The Globe from 1900-2018</h2>
+          <p class="small-font" style="text-align: justify"> This visualisation clearly shows the upward trend of the annual CO2 emission. In the last three decades, there has been nearly 40% rise CO2 in the atmosphere. If the rise</p>
+        </div>
+        <div>
+          <b style="font-size: 15.5px">Do you have any ideas on how to reduce Co2 emmissions globally for a better future ?</b>
+        </div>
+      </div>
+      <div class="pure-u-3-4">
+        <div id="vis7" class="vis-container"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+      </div>
+    </div>
+  
+     
+     
+     
+          <!-- pure sankeyy group -->
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="description description-left">
+          <h2 style="text-align: justify">Rise in Temperature due to Emissions</h2>
+          <p class="small-font" style="text-align: justify"> World temperature is increasing day by day due to continuous increase emissions. As a result, the sea level is increasing causing a lot of natural disasters. </p>
+        </div>
+        <div>
+          <b style="font-size: 15.5px">Do you have any ideas on how to reduce Co2 emmissions globally for a better future ?</b>
+        </div>
+      </div>
+      <div class="pure-u-3-4">
+        <div id="vis8" class="vis-container"></div>
+            <br>
+            <br>
+            <br>
+            <br>
+      </div>
+    </div>
+     
+     
